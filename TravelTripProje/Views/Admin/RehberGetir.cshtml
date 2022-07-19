@@ -1,0 +1,47 @@
+﻿
+@model TravelTripProje.Models.Siniflar.Rehber
+
+
+@{
+    ViewBag.Title = "RehberGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Rehber Getir</h2>
+<br />
+
+
+@using (Html.BeginForm("RehberGuncelle", "Admin", FormMethod.Post))
+{
+
+    @Html.LabelFor(p => p.ID)
+    @Html.TextBoxFor(p => p.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    @Html.LabelFor(p => p.Baslik)
+    @Html.TextBoxFor(p => p.Baslik, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(p => p.Aciklama)
+    @Html.TextAreaFor(p => p.Aciklama, 3, 3, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(p => p.Tarih)
+    @Html.TextBoxFor(p => p.Tarih, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(p => p.Fotograf)
+    @Html.TextBoxFor(p => p.Fotograf, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(p => p.Mekanlar.MEKANAD)
+    @Html.DropDownListFor(p => p.Mekanlar.ID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+
+ 
+
+    <button style="margin-bottom:20px; margin-top:20px" class="btn btn-primary">GÜNCELLE</button>
+
+
+}

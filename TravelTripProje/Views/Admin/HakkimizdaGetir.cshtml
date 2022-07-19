@@ -1,0 +1,31 @@
+﻿
+
+@model TravelTripProje.Models.Siniflar.Hakkimizda
+
+@{
+    ViewBag.Title = "HakkimizdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>HakkimizdaGetir</h2>
+<br />
+
+@using (Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post))
+{
+
+    @Html.LabelFor(p => p.ID)
+    @Html.TextBoxFor(p => p.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    @Html.LabelFor(p => p.FotoUrl)
+    @Html.TextBoxFor(p => p.FotoUrl, new { @class = "form-control" })
+    <br />
+
+
+    @Html.LabelFor(p => p.Aciklama)
+    @Html.TextAreaFor(p => p.Aciklama, 5, 5, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">GÜNCELLE</button>
+    <br />
+}

@@ -1,0 +1,78 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<RehberYorumlar>
+
+@{
+    ViewBag.Title = "RehberYorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    string durum = "";
+    string renk = "";
+
+}
+<br />
+<h2>Rehber Yorum Listesi</h2>
+<br />
+
+
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>KULLANICI ADI</th>
+        <th>MAİL</th>
+        <th>YORUM</th>
+        <th>REHBER(OTEL,RESTORAN,MÜZE)</th>
+        <th>SİL</th>
+        <th>GÖRÜNTÜLE</th>
+        <th>DURUM</th>
+
+
+
+    </tr>
+
+    @foreach (var x in Model)
+    {
+
+
+        if (x.Durum == 1)
+
+        {
+
+            durum = "Yayında";
+            renk = "badge badge-primary";
+
+        }
+
+
+        else if (x.Durum == 0)
+        {
+            durum = "Yayında Değil";
+            renk = "badge badge-danger";
+        }
+
+
+
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.KullaniciAdi</td>
+            <td>@x.Mail</td>
+            <td>@x.Yorum.Substring(0, 40) ...</td>
+            <td>@x.Rehber.Baslik</td>
+            <td><span class="@renk">@durum</span></td>
+            <td><a href="/Admin/RehberYorumSil/@x.ID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Admin/RehberYorumGetir/@x.ID" class="btn btn-warning">GÖRÜNTÜLE</a></td>
+
+
+
+        </tr>
+    }
+
+
+</table>
+
+
+
+
+
+

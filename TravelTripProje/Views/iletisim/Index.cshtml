@@ -1,0 +1,100 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Admin>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Contact :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="~/web2/text/javascript" src="js/move-top.js"></script>
+    <script type="~/web2/text/javascript" src="js/easing.js"></script>
+
+
+
+
+    <style>
+
+        .contact-details form input[type="submit"] {
+            color: #a2365a;
+            border: 1px solid #a2365a;
+        }
+
+
+            .contact-details form input[type="submit"]:hover {
+                border: 1px solid #a2365a;
+                background: #a2365a;
+                color: #fff;
+            }
+
+        .contact-details form input[type="text"]:hover, .contact-details textarea:hover {
+            border: 1px solid #a2365a;
+        }
+
+        .contact-details form input[type="text"], .contact-details textarea {
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="contact-content">
+        <div class="container">
+            <div class="contact-info">
+                <h2 style="color:#a2365a">İletişim</h2>
+
+            </div>
+
+            @Html.Action("iletisim", "iletisim")
+
+            <div class="contact-details">
+                <div class="col-md-6 contact-map">
+                    <h4>BİZİ BURADA BULUN</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100027.13489155636!2d27.059120952730645!3d38.421878257079356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd8e2fece48eb%3A0xafa58b890c33632a!2zS29uYWsvxLB6bWly!5e0!3m2!1str!2str!4v1657036634326!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6 company_address">
+                    <h4>İletişim Bilgileri</h4>
+                    @foreach (var x in Model)
+                    {
+                        <p>@x.Adres</p>
+                        <p>Telefon:(+09) @x.Telefon</p>
+                        <p>Email: <a href="@x.Mail">@x.Mail</a></p>
+                    }
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+

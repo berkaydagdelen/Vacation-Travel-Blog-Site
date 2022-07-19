@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<title>Tatil & Seyahat Blog </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+<style>
+    .w3-teal, .w3-hover-teal:hover {
+        color: #fff !important;
+        background-color: #0096 !important
+    }
+
+    .w3-green, .w3-hover-green:hover {
+        color: #fff !important;
+        background-color: #0096 !important;
+    }
+</style>
+
+<body>
+
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">Menüler</h3>
+        <a href="/Admin/Index/" class="w3-bar-item w3-button">Bloglar</a>
+
+        <div class="w3-dropdown-click">
+            <button class="w3-button" onclick="myDropFunc()">
+                Yorumlar <i class="fa fa-caret-down"></i>
+            </button>
+            <div id="demoDrop" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+                <a href="/Admin/YorumListesi/" class="w3-bar-item w3-button">Blog Yorum</a>
+                <a href="/Admin/RehberYorumListesi" class="w3-bar-item w3-button">Rehber Yorum</a>
+            </div>
+        </div>
+        <a href="/Admin/RehberListesi/" class="w3-bar-item w3-button">Rehber(Otel,Restoran,Müze)</a>
+        <a href="/Admin/iletisimListesi/" class="w3-bar-item w3-button">İletişim</a>
+        <a href="/Admin/HakkimizdaGetir/1" class="w3-bar-item w3-button">Hakkımızda</a>
+        <a href="/Default/Index/" class="w3-bar-item w3-button">Travel Trip Site</a>
+        <a href="/GirisYap/Logout/" class="w3-bar-item w3-button">Çıkış Yap</a>
+
+
+
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal">
+            <h4>Admin Yönetim Paneli</h4>
+        </div>
+
+
+
+        <div class="w3-container">
+            @RenderBody()
+
+        </div>
+
+    </div>
+
+
+    <script>
+        function myAccFunc() {
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-green";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace(" w3-green", "");
+            }
+        }
+
+        function myDropFunc() {
+            var x = document.getElementById("demoDrop");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-green";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace(" w3-green", "");
+            }
+        }
+    </script>
+
+</body>
+</html>

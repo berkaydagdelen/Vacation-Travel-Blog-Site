@@ -1,0 +1,29 @@
+﻿
+@model TravelTripProje.Models.Siniflar.RehberYorumlar
+
+@{
+    ViewBag.Title = "RehberYorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>RehberYorumGetir</h2>
+<br />
+@using (Html.BeginForm("RehberYorumYayinla", "Admin", FormMethod.Post))
+{
+
+    @Html.LabelFor(p => p.ID)
+    @Html.TextBoxFor(p => p.ID, new { @class = "form-control", @ReadOnly = "ReadaOnly" })
+    <br />
+    @Html.LabelFor(p => p.KullaniciAdi)
+    @Html.TextBoxFor(p => p.KullaniciAdi, new { @class = "form-control", @ReadOnly = "ReadaOnly" })
+    <br />
+    @Html.LabelFor(p => p.Mail)
+    @Html.TextBoxFor(p => p.Mail, new { @class = "form-control", @ReadOnly = "ReadaOnly" })
+    <br />
+    @Html.LabelFor(p => p.Yorum)
+    @Html.TextAreaFor(p => p.Yorum, 3, 3, new { @class = "form-control", @ReadOnly = "ReadaOnly" })
+    <br />
+    <button class="btn btn-primary">YAYINLA</button>
+
+
+}

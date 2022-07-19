@@ -1,0 +1,22 @@
+﻿
+@using TravelTripProje.Models.Siniflar
+@model List<Rehber>
+
+
+<div class="col-md-4 side-content">
+
+    <div class="recent">
+
+        <h3>İlgili Gönderiler</h3>
+
+        @foreach (var x in Model)
+        {
+            <ul>
+                <li><a href="/Rehber/RehberDetay/@x.ID">@x.Baslik</a></li>
+
+            </ul>
+        }
+    </div>
+
+
+</div>
